@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enoeht Home Care | In-Home Nursing & Personal Care in Georgia</title>
+<meta name="description" content="Enoeht Home Care provides skilled nursing, personal care and companion services at home for children and adults in Georgia, including pediatric nursing through the Georgia Pediatric Program (GAPP).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14365a; --teal:#1f7a7a; --teal-soft:#e4f1f0; --coral:#e8735a; --coral-dark:#cf5d45;
+    --cream:#fbf7f2; --ink:#1d2733; --muted:#5b6876; --line:#e3e7eb; --white:#fff;
+    --radius:16px; --shadow:0 10px 30px rgba(20,54,90,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);line-height:1.6;background:var(--white)}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--navy);line-height:1.2;font-weight:600}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .ph{background:#fff3c4;color:#5a4500;border-radius:4px;padding:0 4px} /* placeholder highlight: remove when filled in */
+
+  /* top bar */
+  .topbar{background:var(--navy);color:#dbe6f0;font-size:.875rem}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+  .topbar a{text-decoration:none}
+  .topbar span{margin-right:20px}
+
+  /* nav */
+  header.nav{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:50}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .logo-mark{width:40px;height:40px;border-radius:12px;background:var(--teal);display:grid;place-items:center}
+  .logo-text{font-family:Fraunces,serif;font-size:1.35rem;color:var(--navy);font-weight:600}
+  .logo-text small{display:block;font-family:Inter,sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-top:-4px}
+  nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  nav a{text-decoration:none;font-weight:500;color:var(--ink);font-size:.95rem}
+  nav a:hover{color:var(--teal)}
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:.2s}
+  .btn-primary{background:var(--coral);color:#fff}
+  .btn-primary:hover{background:var(--coral-dark)}
+  .btn-outline{border-color:var(--navy);color:var(--navy);background:transparent}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy);cursor:pointer}
+
+  /* hero */
+  .hero{background:linear-gradient(180deg,var(--cream),#fff);padding:80px 0 72px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);margin-bottom:20px}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);margin-bottom:30px;max-width:540px}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-card{background:var(--teal);border-radius:28px;padding:40px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-card::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08);right:-80px;top:-80px}
+  .hero-card h3{color:#fff;font-size:1.35rem;margin-bottom:18px}
+  .hero-card ul{list-style:none}
+  .hero-card li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.18);display:flex;gap:12px;align-items:flex-start}
+  .hero-card li:last-child{border:0}
+  .check{flex:none;width:22px;height:22px;border-radius:50%;background:#fff;color:var(--teal);display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px}
+
+  /* sections */
+  section{padding:88px 0}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 52px}
+  .section-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:14px}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+  .alt{background:var(--cream)}
+
+  /* about */
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:18px}
+  .about p{color:var(--muted);margin-bottom:16px}
+  .mv{display:grid;gap:18px}
+  .mv-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .mv-card h3{font-size:1.15rem;margin-bottom:8px}
+  .mv-card p{margin:0}
+
+  /* services */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.2s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .icon{width:52px;height:52px;border-radius:14px;background:var(--teal-soft);display:grid;place-items:center;margin-bottom:18px}
+  .icon svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.2rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* GAPP explainer */
+  .gapp .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .gapp h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:16px}
+  .gapp p{color:var(--muted);margin-bottom:14px}
+  .elig{background:#fff;border-radius:var(--radius);padding:32px;border:1px solid var(--line)}
+  .elig h3{font-size:1.2rem;margin-bottom:14px}
+  .elig ul{list-style:none}
+  .elig li{display:flex;gap:12px;padding:8px 0;color:var(--ink)}
+  .elig .check{background:var(--teal);color:#fff}
+  .note{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+  .step{position:relative;padding:28px;background:#fff;border-radius:var(--radius);border:1px solid var(--line)}
+  .step::before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;font-family:Fraunces,serif;font-size:1.2rem;margin-bottom:16px}
+  .step h3{font-size:1.1rem;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:.95rem}
+
+  /* careers */
+  .careers{background:var(--navy);color:#dbe6f0}
+  .careers .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+  .careers h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:16px}
+  .careers p{margin-bottom:14px}
+  .roles{display:grid;gap:14px}
+  .role{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:20px 22px}
+  .role strong{color:#fff;display:block;font-size:1.05rem}
+  .role span{font-size:.9rem}
+
+  /* faq */
+  .faq{max-width:820px;margin:0 auto}
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:14px}
+  summary{cursor:pointer;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--teal)}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin-top:12px}
+
+  /* contact */
+  .contact .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px}
+  .contact h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:16px}
+  .contact-info p{color:var(--muted);margin-bottom:24px}
+  .info-row{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+  .info-row .icon{width:44px;height:44px;margin:0;flex:none}
+  .info-row .icon svg{width:22px;height:22px}
+  .info-row strong{display:block;color:var(--navy)}
+  form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--shadow)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{display:block;font-weight:500;font-size:.9rem;margin-bottom:6px;color:var(--navy)}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #cfd6dd;border-radius:10px;font:inherit;margin-bottom:16px;background:#fff}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:transparent}
+  textarea{min-height:110px;resize:vertical}
+  .privacy-note{font-size:.82rem;color:var(--muted);background:var(--teal-soft);border-radius:10px;padding:10px 14px;margin-bottom:18px}
+
+  /* cta band */
+  .cta-band{background:var(--coral);color:#fff;text-align:center;padding:64px 0}
+  .cta-band h2{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px}
+  .cta-band p{margin-bottom:26px;opacity:.95}
+  .cta-band .btn{background:#fff;color:var(--coral-dark)}
+  .cta-band .btn:hover{background:var(--navy);color:#fff}
+
+  /* footer */
+  footer{background:#0f2943;color:#aebdcc;padding:60px 0 28px;font-size:.93rem}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:40px}
+  footer h4{color:#fff;font-family:Fraunces,serif;font-weight:600;font-size:1.05rem;margin-bottom:14px}
+  footer ul{list-style:none}
+  footer li{margin-bottom:8px}
+  footer a{text-decoration:none}
+  footer a:hover{color:#fff}
+  footer .logo-text{color:#fff}
+  .legal{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
+
+  /* responsive */
+  @media (max-width:960px){
+    .hero .wrap,.about .wrap,.gapp .wrap,.careers .wrap,.contact .wrap{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    footer .cols{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .menu-toggle{display:block}
+    nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:16px;border-bottom:1px solid var(--line)}
+    nav ul.open{display:flex}
+    .grid-3,.steps,.form-row,footer .cols{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .topbar .wrap{justify-content:center;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>
+      <span>📍 Serving <span class="ph">[City / Counties], Georgia</span></span>
+      <span>🕒 Office: <span class="ph">Mon–Fri 9:00 AM – 5:00 PM</span></span>
+    </div>
+    <div><a href="tel:+10000000000">📞 <span class="ph">(000) 000-0000</span></a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Enoeht Home Care home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M12 17s-3-1.8-3-3.6A1.6 1.6 0 0112 12a1.6 1.6 0 013 1.4C15 15.2 12 17 12 17z"/></svg>
+      </span>
+      <span class="logo-text">Enoeht<small>Home Care</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gapp">Pediatric (GAPP)</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="btn btn-primary">Free Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Home Care · Georgia</span>
+      <h1>Compassionate, skilled care, right at home.</h1>
+      <p class="lead">Enoeht Home Care provides nursing, personal care and companion services so children and adults can stay safe and comfortable at home, including pediatric nursing through the Georgia Pediatric Program (GAPP).</p>
+      <div class="ctas">
+        <a href="#contact" class="btn btn-primary">Request a Free Consultation</a>
+        <a href="#careers" class="btn btn-outline">Join Our Team</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Care built around your family</h3>
+      <ul>
+        <li><span class="check">✓</span><span>Licensed RNs, LPNs and trained caregivers</span></li>
+        <li><span class="check">✓</span><span>Individualized care plans coordinated with your physician</span></li>
+        <li><span class="check">✓</span><span>Care for children and adults, from a few hours a week to full shifts</span></li>
+        <li><span class="check">✓</span><span>Consistent caregivers your loved one can get to know</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">About Us</span>
+      <h2>Keeping the people you love where they thrive: at home.</h2>
+      <p>Caring for a loved one with medical needs, a disability or the challenges of aging is a big responsibility. Enoeht Home Care exists so families don't have to carry it alone. Our nurses and caregivers provide skilled, hands-on support at home, surrounded by the people and routines your loved one knows.</p>
+      <p>Enoeht Home Care is a Georgia private home care provider licensed by the Department of Community Health. We are a locally owned agency serving families in <span class="ph">[service area]</span>.</p>
+    </div>
+    <div class="mv">
+      <div class="mv-card">
+        <h3>Our Mission</h3>
+        <p>To deliver safe, skilled and compassionate care that helps children and adults live fuller lives at home.</p>
+      </div>
+      <div class="mv-card">
+        <h3>Our Vision</h3>
+        <p>A Georgia where every family caring for a loved one has dependable, high-quality support at home.</p>
+      </div>
+      <div class="mv-card">
+        <h3>Our Promise to Families</h3>
+        <p>Clear communication, reliable scheduling, and caregivers who treat your loved one like family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Care that fits your family's needs</h2>
+      <p>From skilled nursing to a helping hand with daily routines, every care plan is built around your loved one's needs, physician's orders and family schedule.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg></div>
+        <h3>Skilled Nursing</h3>
+        <p>Private duty nursing by RNs and LPNs, including trach and ventilator care, tube feedings, medication administration and health monitoring.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 100-6 3 3 0 000 6zM3 21v-1a6 6 0 0112 0v1M16 11l2 2 4-4"/></svg></div>
+        <h3>Pediatric Care (GAPP)</h3>
+        <p>In-home nursing and personal care support for medically fragile children under 21 through the Georgia Pediatric Program.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 21h10M12 17v4M5 3h14l-1 9a6 6 0 01-12 0L5 3z"/></svg></div>
+        <h3>Personal Care</h3>
+        <p>Help with bathing, dressing, grooming, toileting, mobility and other daily activities, delivered with dignity and respect.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div>
+        <h3>Companion & Sitter Services</h3>
+        <p>Friendly companionship, supervision, light housekeeping, meal preparation and medication reminders.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Respite Care</h3>
+        <p>Short-term relief for family caregivers, so you can rest, work or take care of yourself, knowing your loved one is in good hands.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg></div>
+        <h3>Care Coordination</h3>
+        <p>We work with physicians, specialists, case managers and families so everyone stays on the same page.</p>
+      </div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:28px">Payment options: Georgia Medicaid (GAPP) and private pay. <span class="ph">[Add other programs or insurance as you're approved for them]</span></p>
+  </div>
+</section>
+
+<section class="gapp" id="gapp">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For Families of Children with Medical Needs</span>
+      <h2>Pediatric care through GAPP</h2>
+      <p>The Georgia Pediatric Program (GAPP) is a Georgia Medicaid program, administered by the Department of Community Health, that provides in-home skilled nursing and personal care support for medically fragile children under 21.</p>
+      <p>Families apply through a participating nursing agency, and every request is reviewed for medical necessity before services begin. Our team helps you gather what's needed and walks you through each step.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:8px">Ask If Your Child Qualifies</a>
+    </div>
+    <div class="elig">
+      <h3>Your child may be eligible if they:</h3>
+      <ul>
+        <li><span class="check">✓</span><span>Are under 21 years of age</span></li>
+        <li><span class="check">✓</span><span>Have Georgia Medicaid coverage</span></li>
+        <li><span class="check">✓</span><span>Have a medically fragile condition requiring skilled nursing and/or personal care support</span></li>
+        <li><span class="check">✓</span><span>Are receiving physician-ordered care</span></li>
+      </ul>
+      <p class="note">Final eligibility is determined by Georgia Medicaid and the state's medical review team. Contact us and we'll help you understand your options.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>Getting started is simple</h2>
+      <p>We guide you from your first call to your caregiver's first visit.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Free Consultation</h3><p>Tell us about your loved one's needs. We'll answer your questions and explain your options, including GAPP for children.</p></div>
+      <div class="step"><h3>Paperwork & Approval</h3><p>We work with you and your physician on any orders or program approvals needed before care starts.</p></div>
+      <div class="step"><h3>In-Home Assessment</h3><p>A registered nurse visits your home and develops an individualized plan of care.</p></div>
+      <div class="step"><h3>Care Begins</h3><p>Your care team starts, with ongoing check-ins to keep the plan right for your loved one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="careers" id="careers">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Careers</span>
+      <h2>Nurses & caregivers: make a difference one family at a time.</h2>
+      <p>We're building a team of caring, skilled nurses and caregivers who want meaningful one-on-one work. Enjoy flexible shifts, consistent patient assignments and an agency that values your experience.</p>
+      <p>Send your resume and license information to <a href="mailto:careers@example.com" style="color:#fff"><span class="ph">careers@[yourdomain].com</span></a> or use the contact form below.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:8px">Apply Now</a>
+    </div>
+    <div class="roles">
+      <div class="role"><strong>Registered Nurse (RN)</strong><span>Pediatric private duty · Flexible shifts</span></div>
+      <div class="role"><strong>Licensed Practical Nurse (LPN)</strong><span>Pediatric private duty · Days, nights & weekends</span></div>
+      <div class="role"><strong>RN Clinical Supervisor</strong><span>Assessments, care plans & nurse oversight</span></div>
+      <div class="role"><strong>Personal Care Aide / Companion</strong><span>Children & adults · Flexible hours</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions families ask us</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Who do you serve?</summary>
+        <p>We serve children and adults who need skilled nursing, personal care or companionship at home. For medically fragile children under 21, we provide care through the Georgia Pediatric Program (GAPP). Our current service area is <span class="ph">[counties]</span>.</p>
+      </details>
+      <details>
+        <summary>How is care paid for?</summary>
+        <p>For children approved for GAPP, approved services are covered by Georgia Medicaid. Other services are available on a private-pay basis. We'll talk through your options and costs during your free consultation.</p>
+      </details>
+      <details>
+        <summary>My child doesn't have Medicaid yet. Can you still help?</summary>
+        <p>Yes. Reach out and we'll explain what's involved and point you to the right resources for Medicaid eligibility.</p>
+      </details>
+      <details>
+        <summary>How many hours of care can we get?</summary>
+        <p>Private-pay care can be scheduled from a few hours a week up to full shifts. For GAPP, hours are based on your child's medical needs and approved through the state's review process; we'll help request the level of care your child's physician orders.</p>
+      </details>
+      <details>
+        <summary>Will we have the same caregiver each time?</summary>
+        <p>We work hard to assign a consistent team so your child and family can build trust with familiar caregivers.</p>
+      </details>
+      <details>
+        <summary>How do I get started?</summary>
+        <p>Call us or fill out the form below. We'll schedule a free consultation, usually within <span class="ph">[1–2 business days]</span>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="alt contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's talk about your loved one's care.</h2>
+      <p>Whether you're a parent, a physician's office, a case manager or a nurse looking to join us, we'd love to hear from you.</p>
+      <div class="info-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></div>
+        <div><strong>Phone</strong><a href="tel:+10000000000"><span class="ph">(000) 000-0000</span></a></div>
+      </div>
+      <div class="info-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div><strong>Email</strong><a href="mailto:info@example.com"><span class="ph">info@[yourdomain].com</span></a></div>
+      </div>
+      <div class="info-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><strong>Office</strong><span class="ph">[Street address], [City], GA [ZIP]</span></div>
+      </div>
+      <div class="info-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><strong>Office Hours</strong><span class="ph">Mon–Fri 9:00 AM – 5:00 PM</span></div>
+      </div>
+    </div>
+
+    <!-- Form handling: static sites can't process forms on their own.
+         Create a free form at formspree.io and replace YOUR_FORM_ID below. -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div><label for="name">Your name</label><input id="name" name="name" required></div>
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+      </div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+      <label for="reason">I am a…</label>
+      <select id="reason" name="reason">
+        <option>Looking for care for my child</option>
+        <option>Looking for care for an adult / myself</option>
+        <option>Physician / referral source</option>
+        <option>Case manager</option>
+        <option>Nurse or caregiver interested in working with us</option>
+        <option>Other</option>
+      </select>
+      <label for="message">How can we help?</label>
+      <textarea id="message" name="message"></textarea>
+      <p class="privacy-note">Please don't include medical details or diagnoses in this form. We'll discuss care needs privately by phone.</p>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Care at home, from people who care.</h2>
+    <p>Schedule a free, no-obligation consultation today.</p>
+    <a href="tel:+10000000000" class="btn">Call <span class="ph">(000) 000-0000</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:14px">
+          <span class="logo-mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M12 17s-3-1.8-3-3.6A1.6 1.6 0 0112 12a1.6 1.6 0 013 1.4C15 15.2 12 17 12 17z"/></svg></span>
+          <span class="logo-text">Enoeht<small>Home Care</small></span>
+        </a>
+        <p>In-home nursing, personal care and companion services for children and adults across <span class="ph">[service area]</span>, Georgia.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gapp">Pediatric Care (GAPP)</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Families</h4>
+        <ul>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Free Consultation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><span class="ph">(000) 000-0000</span></li>
+          <li><span class="ph">info@[yourdomain].com</span></li>
+          <li><span class="ph">[Street address], [City], GA [ZIP]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> Enoeht LLC d/b/a Enoeht Home Care. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy Policy</a> · <a href="privacy.html#nondiscrimination">Nondiscrimination Notice</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
